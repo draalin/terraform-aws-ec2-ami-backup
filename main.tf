@@ -50,14 +50,14 @@ data "aws_iam_policy_document" "ami_backup" {
 
 data "archive_file" "ami_backup" {
   type        = "zip"
-  source_file = "ami_backup.py"
-  output_path = "ami_backup.zip"
+  source_file = "${path.module}/ami_backup.py"
+  output_path = "${path.module}/ami_backup.zip"
 }
 
 data "archive_file" "ami_cleanup" {
   type        = "zip"
-  source_file = "ami_cleanup.py"
-  output_path = "ami_cleanup.zip"
+  source_file = "${path.module}/ami_cleanup.py"
+  output_path = "${path.module}/ami_cleanup.zip"
 }
 
 module "label" {
